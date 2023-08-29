@@ -26,7 +26,7 @@ const canvasModule = (function () {
     };
 })();
 
-// Модуль для работы с данными и логикой диаграммы
+//Модуль для работы с данными и логикой диаграммы
 const chartModule = (function (canvasModule) {
     const chartData = generateRandomChartData();
     const colors = generateRandomColors();
@@ -87,4 +87,49 @@ const chartModule = (function (canvasModule) {
         }
         return color;
     }
-})(canvasModule);
+})
+(canvasModule);
+chartModule()
+
+//
+// const canvas = document.getElementById('chartCanvas');
+// const context = canvas.getContext('2d');
+// const centerX = canvas.width / 2;
+// const centerY = canvas.height / 2;
+//
+// const sectors = [
+//     { fraction: 0.3, radius: 100, color: '#FF5733' },
+//     { fraction: 0.5, radius: 100, color: '#3498DB' },
+//     { fraction: 0.1, radius: 100, color: '#27AE60' },
+//     { fraction: 0.1, radius: 100, color: '#ae277f' },
+// ];
+//
+//
+// function drawSector(startAngle, endAngle, color, radius) {
+//     context.beginPath();
+//     context.moveTo(centerX, centerY);
+//     context.arc(centerX, centerY, radius, startAngle, endAngle);
+//     context.closePath();
+//     context.fillStyle = color;
+//     context.fill();
+// }
+// function updateChart() {
+//     context.clearRect(0, 0, canvas.width, canvas.height);
+//     let currentAngle = -Math.PI / 2; // Start from the top
+//     sectors.forEach((sector) => {
+//         const endAngle = currentAngle + 2 * Math.PI * sector.fraction;
+//
+//         drawSector(currentAngle, endAngle, sector.color, sector.radius);
+//         currentAngle = endAngle;
+//     });
+// }
+//
+// canvas.addEventListener('click', () => {
+//     const chartContainer = document.querySelector('.chart-container');
+//     chartContainer.classList.toggle('enlarged');
+//     updateChart();
+// });
+//
+// // Initial chart rendering
+// updateChart();
+//
